@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 	
 	@RequestMapping("/")
-	public @ResponseBody String root() {
-		return "메인페이지";
+	public String root() {
+		return "main";
 	}
 	
 	
