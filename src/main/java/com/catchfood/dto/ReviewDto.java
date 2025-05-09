@@ -11,5 +11,5 @@ public class ReviewDto {
 	private LocalDateTime reviewDay;
 	private String reviewImage;
 	private int userNum;
-	private int menuNum;
+	private String userId;
 }
