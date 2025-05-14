@@ -45,6 +45,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
@@ -62,6 +68,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
@@ -79,6 +91,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+             <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
@@ -96,6 +114,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
