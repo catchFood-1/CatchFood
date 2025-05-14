@@ -1,5 +1,10 @@
 package com.catchfood.dao;
 
-public interface UserDao {
+import org.apache.ibatis.annotations.Mapper;
 
+import com.catchfood.dto.UserDto;
+
+@Mapper
+public interface UserDao {
+	UserDto findByUserId(String userId);
 }

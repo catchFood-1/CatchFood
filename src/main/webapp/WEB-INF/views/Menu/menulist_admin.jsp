@@ -35,8 +35,7 @@
     <c:forEach var="menu" items="${korean}">
         <table border="1" width="300" style="margin-bottom: 10px;">
             <tr>
-                <td>
-                ${menu.menuName}
+                <td>${menu.menuName}
                 </td>
                 <td rowspan="4">
                 <img src="${menu.menuImage}" width="100" 
@@ -45,6 +44,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
@@ -62,6 +67,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
@@ -79,6 +90,12 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
@@ -96,10 +113,16 @@
             </tr>
             <tr><td>${menu.menuDescription}</td></tr>
             <tr><td>${menu.menuPrice}원</td></tr>
+            <tr>
+            	<td>     
+            	    <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정/</a>
+        			 <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+        		</td>
+            </tr>
         </table>
     </c:forEach>
 </div>
-
+	<a href="/menuinsert">메뉴 등록</a>
 
 </body>
 </html>

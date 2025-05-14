@@ -9,15 +9,14 @@
 		select * from reservation order by reservationDate desc
 	</select>
 
-	<!-- 예약 정보 삽입(회원)-->
-	<insert id="reservationInsert">
-		insert into reservation(reservationDate, reservationNumber, reservationRequest, userNum)
-		 values(#{reservationDate}, #{reservationNumber}, #{reservationRequest}, #{userNum})
-	</insert>
-	
 	<!-- 예약 삭제하기(관리자) -->
 	<delete id="reservationDelete">
 		delete from reservation where reservationNum = #{reservationNum}
 	</delete>
 	
+	<!-- 결제 후 DB에 내용 추가 -->
+	<insert id="reservationInsert" useGeneratedKeys="true" keyProperty="reservationNum">
+		insert into reservation(reservationDate, reservationNumber, reservationRequest, userNum)
+		 values(#{reservationDate}, #{reservationNumber}, #{reservationRequest}, #{userNum})
+	</insert>
 </mapper>

@@ -4,13 +4,14 @@ import lombok.Data;
 
 @Data
 public class MenuDto {
-	private int menuNum;
-	private String menuName;
-	private int menuPrice;
-	private String menuDescription;
-	private String menuImage;
-	private boolean menuRecommend;
-	private int categoryNum;
-	private int menuCount;
-	private int menuPTotal;
+    private int menuNum;
+    private String menuName;
+    private int menuPrice;
+    private String menuDescription;
+    private String menuImage;
+    private Integer menuRecommend;  
+    private int categoryNum;
+    private int menuCount;
+    private int menuPTotal;
+
 }

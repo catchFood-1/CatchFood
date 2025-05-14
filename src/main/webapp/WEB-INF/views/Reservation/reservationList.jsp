@@ -8,7 +8,12 @@
 <title>관리자용 전체 리스트</title>
 </head>
 <body>
+	<a href="/">
+		<img src="/images/CatchFoodWhite.png" alt="CaTchFood">
+	</a>
+	
 	<table border="1">
+	<h1>예약 리스트(관리자용)</h1>
 	<tr>
 		<th>예약 번호</th>
 		<th>예약 날짜</th>

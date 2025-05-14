@@ -7,4 +7,32 @@
 	<select id="getMenusByCategory" parameterType="int" resultType="com.catchfood.dto.MenuDto">
 	    select * from menu where categoryNum = #{categoryNum} ORDER BY menuNum DESC
 	</select>
+	
+	<select id="menudetail" parameterType="int" resultType="com.catchfood.dto.MenuDto">
+	    select * from menu where menuNum=#{menuNum}
+	</select>
+	
+	<select id="recommendmenu" parameterType="int" resultType="com.catchfood.dto.MenuDto">
+	    select * from menu where menuRecommend=1
+	</select>
+	
+	<insert id="insertmenu" parameterType="com.catchfood.dto.MenuDto">
+		insert into menu (
+   		 menuName, menuPrice, menuDescription, menuImage,
+  		  menuRecommend, menuCount, menuPTotal, categoryNum
+		) values (
+  		  #{menuName},#{menuPrice},#{menuDescription},#{menuImage},#{menuRecommend},#{menuCount},#{menuPTotal},#{categoryNum}
+  		  );
+	</insert>
+	
+	<update id="updatemenu">
+		update menu set
+		menuName=#{menuName},menuPrice=#{menuPrice},menuDescription=#{menuDescription},menuImage=#{menuImage},menuRecommend=#{menuRecommend},categoryNum=#{categoryNum}
+		where menuNum=#{menuNum}
+	</update>
+	
+	<delete id="deletemenu">
+		delete from menu where menuNum=#{menuNum}
+	</delete>
 	</mapper>
+	

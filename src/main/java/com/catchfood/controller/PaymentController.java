@@ -9,6 +9,6 @@ public class PaymentController {
 	@RequestMapping("/payment")
 	public String payment() {
 		
-		return "payment";
+		return "Payment/payment";
 	}
 }

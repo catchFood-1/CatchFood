@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,44 +16,45 @@ import org.springframework.web.multipart.MultipartFile;
 import com.catchfood.dao.ReviewDao;
 import com.catchfood.dto.ReviewDto;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class ReviewController {
 
     @Autowired
-    ReviewDao reviewdao;
+    private ReviewDao reviewdao;
 
-    // application.properties에서 주입받기 (외부 저장 경로)
-    @Value("${upload.path}")
-    private String uploadPath;
-
-    @RequestMapping("/insert")
+    @RequestMapping("insert")
     public String insert() {
         return "Review/reviewinsert";
     }
 
-    @PostMapping("/writer")
+    @PostMapping("writer")
     public String reviewInsert(@ModelAttribute ReviewDto dto,
                                @RequestParam("imageFile") MultipartFile[] files,
                                HttpSession session,
-                               Model model
-    						) {
+                               HttpServletRequest request,
+                               Model model) {
 
+        String webPath = "/images/";
+        String realPath = request.getServletContext().getRealPath(webPath);
         StringBuilder imagePaths = new StringBuilder();
 
         for (MultipartFile file : files) {
             if (!file.isEmpty()) {
                 try {
-                    String originalName = file.getOriginalFilename();
-                    String cleanName = originalName.replaceAll("[^a-zA-Z0-9._-]", "_");
-                    String fileName = System.currentTimeMillis() + "_" + cleanName;
+                	String originalName = file.getOriginalFilename();
+                	String cleanName = originalName.replaceAll("[^가-힣a-zA-Z0-9._-]", "_");
+                	String fileName = System.currentTimeMillis() + "_" + cleanName;
 
-                    File saveFile = new File(uploadPath + fileName);
-                    saveFile.getParentFile().mkdirs();
+                    File dir = new File(realPath);
+                    if (!dir.exists()) dir.mkdirs();
+
+                    File saveFile = new File(dir, fileName);
                     file.transferTo(saveFile);
 
-                    imagePaths.append("/").append(fileName).append(",");
+                    imagePaths.append(webPath).append(fileName).append(",");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -62,18 +62,17 @@ public class ReviewController {
         }
 
         if (!imagePaths.isEmpty()) {
-            imagePaths.setLength(imagePaths.length() - 1);
-            dto.setReviewImage(imagePaths.toString()); 
+            imagePaths.setLength(imagePaths.length() - 1); // 마지막 , 제거
+            dto.setReviewImage(imagePaths.toString());
         }
-        
-       
-       dto.setReviewDay(LocalDateTime.now());
+
+        dto.setReviewDay(LocalDateTime.now());
         reviewdao.ReviewInsert(dto);
 
         return "redirect:/review";
     }
 
-    @RequestMapping("/review")
+    @RequestMapping("review")
     public String ReviewListPage(@RequestParam(name = "page", defaultValue = "1") int page, Model model) {
         int pageSize = 10;
         int startRow = (page - 1) * pageSize;
@@ -87,5 +86,11 @@ public class ReviewController {
         model.addAttribute("totalPage", totalPage);
         model.addAttribute("totalCount", totalCount);
         return "Review/reviewlist";
+    }
+    
+    @RequestMapping("reviewdelete")
+    public String ReviewDelete(@RequestParam("reviewNum")int reviewNum) {
+    	reviewdao.ReviewDelete(reviewNum);
+    	return"redirect:review";
     }
 }

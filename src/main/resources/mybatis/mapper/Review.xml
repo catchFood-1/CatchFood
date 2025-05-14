@@ -15,13 +15,18 @@
  	</select>
  	
 	<insert id="ReviewInsert">
-	    INSERT INTO review (reviewStars, reviewImage, reviewContent, reviewDay, userNum)
-	    VALUES (#{reviewStars}, #{reviewImage}, #{reviewContent}, #{reviewDay}, #{userNum})
+	    insert into review (reviewStars, reviewImage, reviewContent, reviewDay, userNum)
+	    values (#{reviewStars}, #{reviewImage}, #{reviewContent}, #{reviewDay}, #{userNum})
 	</insert>
 	
 	<select id="getTotalCount" resultType="int">
-	    SELECT COUNT(*) FROM review
+	    select count(*) from review
 	 </select>
 	  
+	  
+	  <delete id="ReviewDelete">
+	  	 delete from review where reviewNum=#{reviewNum} 
+	  	 
+	  </delete>
 
 </mapper>

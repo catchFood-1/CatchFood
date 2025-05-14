@@ -8,7 +8,9 @@
 <title>리뷰작성페이지</title>
 </head>
 <body>
-<img src="/image/CatchFoodWhite.jpg" alt="CaTchFood" width="100">
+<a href="/">
+      <img src="/images/CatchFoodWhite.png" alt="CaTchFood">
+   </a>
 <h2>리뷰작성페이지</h2>
 <form name="review" method="post" action="writer" enctype="multipart/form-data">
 	<table border="1" width="500">

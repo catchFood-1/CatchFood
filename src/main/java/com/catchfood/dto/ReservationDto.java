@@ -1,14 +1,22 @@
 package com.catchfood.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.Data;
 @Data
 public class ReservationDto {
-	private int reservationNum; //자동증가
-	private String reservationDate; //datetime -> String으로 바꿈(DB는 그대로)
-	private int reservationNumber;
+	private int reservationNum; 
+	private String reservationDate; 
+	private Integer reservationNumber;
 	private String reservationRequest;
-	private LocalDateTime reservationNow; //예약했을때 시간 자동 생성
-	private int userNum; //외래키
+	private LocalDateTime reservationNow; 
+	private Integer userNum; 
+	
+	private List<String> menuName;
+	private List<Integer> menuPrice;
+	private List<Integer> menuCount;
+	
+	private List<Integer> menuNum;
+    private List<Integer> menuTotal;
 }
