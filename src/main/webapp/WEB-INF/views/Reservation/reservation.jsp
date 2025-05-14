@@ -19,9 +19,8 @@
 	</style>
 </head>
 <body>
-	<a href="/">
-		<img src="/images/CatchFoodWhite.png" alt="CaTchFood">
-	</a>
+	<jsp:include page="/WEB-INF/views/top.jsp"/>
+
 	<h1>CatchFood 예약</h1>
 	<h3><i><u>예약 확정 후에는 변경이 불가합니다.</u></i></h3>
 	<form name="reservation" method="post" action="reservationTemp" onsubmit="updateMenuHiddenFields()">
@@ -197,7 +196,9 @@
 		<textarea rows="4" cols="40" name="reservationRequest" placeholder="ex. 콩 알러지가 있어요. 콩 빼주세요."></textarea><p>
 		<input type="submit" value="다음">
 	</form>
-		
+	
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>	
+	
 	<script>
 		let selectedDate = null;
 	

@@ -9,6 +9,8 @@
 <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> <!-- IMP전역 변수생성 -->
 </head>
 <body>
+	<jsp:include page="/WEB-INF/views/top.jsp"/>
+
 	<%
     	ReservationDto dto = (ReservationDto) session.getAttribute("tempReservation");
 	
@@ -75,5 +77,7 @@
         });
       }
     </script>
+    
+    <jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

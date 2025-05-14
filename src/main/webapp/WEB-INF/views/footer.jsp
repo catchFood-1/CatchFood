@@ -5,13 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
-	<footer>
+	<footer class="footer">
 		<strong>CaTchFood</strong>
-		| 부산 진구 부산 부산진구 범천동 869-28 
-		| tel: 010-1234-5678 
-		| catchfood@naver.com 
+		| 부산광역시 진구 범천동 869-28 
+		| Tel: 010-1234-5678 
+		| Email : catchfood@naver.com 
 		| &copy; 2025 CatchFood. All rights reserved.
 	</footer>
 </body>

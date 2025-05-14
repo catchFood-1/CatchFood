@@ -7,9 +7,8 @@
 <title>메뉴등록</title>
 </head>
 <body>
-	<a href="/">
-      <img src="/images/CatchFoodWhite.png" alt="CaTchFood">
-   </a>
+	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	
 	<form name="menu" action="menuwrite" method="post" enctype="multipart/form-data">
 	<h2>메뉴 등록 페이지</h2>
 		<table board="1" width="500">
@@ -44,5 +43,7 @@
 		</table>
 		<input type="submit" value="메뉴 등록">
 	</form>
+	
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

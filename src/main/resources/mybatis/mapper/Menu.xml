@@ -13,7 +13,7 @@
 	</select>
 	
 	<select id="recommendmenu" parameterType="int" resultType="com.catchfood.dto.MenuDto">
-	    select * from menu where menuRecommend=1
+	    select * from menu where menuRecommend=1 and deleted=0
 	</select>
 	
 	<insert id="insertmenu" parameterType="com.catchfood.dto.MenuDto">

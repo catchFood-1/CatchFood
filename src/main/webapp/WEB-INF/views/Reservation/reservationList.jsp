@@ -8,9 +8,7 @@
 <title>관리자용 전체 리스트</title>
 </head>
 <body>
-	<a href="/">
-		<img src="/images/CatchFoodWhite.png" alt="CaTchFood">
-	</a>
+	<jsp:include page="/WEB-INF/views/top.jsp"/>
 	
 	<table border="1">
 	<h1>예약 리스트(관리자용)</h1>
@@ -35,5 +33,7 @@
 	</tr>
 	</c:forEach>
 	</table>
+	
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

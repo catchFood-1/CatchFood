@@ -20,9 +20,7 @@
   }
   window.onload = () => showCategory('korean');
 </script>
-	<a href="/">
-      <img src="/images/CatchFoodWhite.png" alt="CaTchFood">
-   </a>
+	
 <%-- 한식 --%>
 <div id="korean" class="menu-category">
   <h3>한식</h3>

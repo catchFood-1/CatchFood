@@ -10,9 +10,7 @@
 <title>예약 확인 페이지</title>
 </head>
 <body>
-	<a href="/">
-		<img src="/images/CatchFoodWhite.png" alt="CaTchFood">
-	</a>
+	<jsp:include page="/WEB-INF/views/top.jsp"/>
 	
 	<% ReservationDto dto = (ReservationDto)session.getAttribute("tempReservation"); %>
 
@@ -101,5 +99,7 @@
 		<input type="hidden" name="total" value="<%= total %>">
 		<input type="submit" value="결제">
 	</form>
+	
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

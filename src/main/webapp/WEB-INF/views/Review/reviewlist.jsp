@@ -8,77 +8,77 @@
     <title>리뷰 리스트</title>
 </head>
 <body>
-<a href="/">
-      <img src="/images/CatchFoodWhite.png" alt="CaTchFood">
- </a>
-<h2>리뷰작성</h2>
-<table border="1" width="500">
-    <tr>
-		<td colspan="3">
-			○리뷰
-		</td>
-	</tr>
-	<c:if test="${empty review}">
-    <tr>
-        <td colspan="3" align="center" style="padding: 20px;">
-            첫 번째 리뷰를 남겨주세요 😊
-        </td>
-    </tr>
-	</c:if>
-	
-    <c:forEach var="dto" items="${review}" varStatus="status">
-        <tr>
-            <td>
-                ${totalCount - ((currentPage - 1) * 10 + status.index)}
-            </td>
-            <td>${dto.userId}</td>
-            <td>
-                <span style="color: gold;">
-                    <c:forEach var="i" begin="1" end="${dto.reviewStars}">★</c:forEach>
-                </span>
-            </td>
-        </tr>
-		<tr>
-		    <td colspan="3" align="center">
-		        <c:if test="${not empty dto.reviewImage}">
-		            <c:forTokens items="${dto.reviewImage}" delims="," var="img">
-		                <img src="${img}" width="300px" style="margin: 5px;" onerror="this.style.display='none';"/>
-		            </c:forTokens>
-		        </c:if>
-		    </td>
+	<jsp:include page="/WEB-INF/views/top.jsp"/>
+
+	<h2>리뷰작성</h2>
+	<table border="1" width="500">
+	    <tr>
+			<td colspan="3">
+				○리뷰
+			</td>
 		</tr>
-        <tr>
-            <td colspan="3">${dto.reviewContent}</td>
-        </tr>
-        <tr>
-            <td colspan="3">${dto.reviewDay.toString().substring(0,10)}</td>
-        </tr>
-         <tr>
-            <td colspan="3">
-            <a href="/reviewdelete?reviewNum=${dto.reviewNum}">리뷰 삭제</a>
-            </td>
-        </tr>
-    </c:forEach>
-</table>
-
-<div>
-    <c:forEach begin="1" end="${totalPage}" var="i">
-        <a href="/review?page=${i}">
-            <c:choose>
-                <c:when test="${i == currentPage}">
-                    <b>[${i}]</b>
-                </c:when>
-                <c:otherwise>
-                    [${i}]
-                </c:otherwise>
-            </c:choose>
-        </a>
-    </c:forEach>
-</div>
-
-<form action="/insert" method="get">
-    <input type="submit" value="리뷰작성하기">
-</form>
-
+		<c:if test="${empty review}">
+	    <tr>
+	        <td colspan="3" align="center" style="padding: 20px;">
+	            첫 번째 리뷰를 남겨주세요 😊
+	        </td>
+	    </tr>
+		</c:if>
+		
+	    <c:forEach var="dto" items="${review}" varStatus="status">
+	        <tr>
+	            <td>
+	                ${totalCount - ((currentPage - 1) * 10 + status.index)}
+	            </td>
+	            <td>${dto.userId}</td>
+	            <td>
+	                <span style="color: gold;">
+	                    <c:forEach var="i" begin="1" end="${dto.reviewStars}">★</c:forEach>
+	                </span>
+	            </td>
+	        </tr>
+			<tr>
+			    <td colspan="3" align="center">
+			        <c:if test="${not empty dto.reviewImage}">
+			            <c:forTokens items="${dto.reviewImage}" delims="," var="img">
+			                <img src="${img}" width="300px" style="margin: 5px;" onerror="this.style.display='none';"/>
+			            </c:forTokens>
+			        </c:if>
+			    </td>
+			</tr>
+	        <tr>
+	            <td colspan="3">${dto.reviewContent}</td>
+	        </tr>
+	        <tr>
+	            <td colspan="3">${dto.reviewDay.toString().substring(0,10)}</td>
+	        </tr>
+	         <tr>
+	            <td colspan="3">
+	            <a href="/reviewdelete?reviewNum=${dto.reviewNum}">리뷰 삭제</a>
+	            </td>
+	        </tr>
+	    </c:forEach>
+	</table>
+	
+	<div>
+	    <c:forEach begin="1" end="${totalPage}" var="i">
+	        <a href="/review?page=${i}">
+	            <c:choose>
+	                <c:when test="${i == currentPage}">
+	                    <b>[${i}]</b>
+	                </c:when>
+	                <c:otherwise>
+	                    [${i}]
+	                </c:otherwise>
+	            </c:choose>
+	        </a>
+	    </c:forEach>
+	</div>
+	
+	<form action="/insert" method="get">
+	    <input type="submit" value="리뷰작성하기">
+	</form>
+	
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>
