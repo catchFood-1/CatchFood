@@ -11,7 +11,6 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/top.jsp"/>
-	
 	<h2>${userId}님 예약 현황</h2>
 	
 	<c:set var="prevReservation" value="-1" />

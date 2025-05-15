@@ -11,7 +11,6 @@
 <body>
 	<jsp:include page="top.jsp"/>
 	
-	  <!-- 본문 콘텐츠 -->
 	  <div class="content">
 	    <%@ include file="Menu/recommendmenu.jsp" %>
 	  </div>

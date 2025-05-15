@@ -1,47 +1,41 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.net.URLDecoder" %>
-<!DOCTYPE html>
-	<html>
-	<head>
-	    <meta charset="UTF-8">
+
 	    <title><%= request.getParameter("name") %> 위치</title>
 	    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ced87bc4e52aedb00b83a03d1de38694"></script>
-	    <style>
-	        .map-card {
-	            width: 90%;
-	            max-width: 800px;
-	            margin: 30px auto;
-	            border: 1px solid #ddd;
-	            border-radius: 12px;
-	            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	            overflow: hidden;
-	            background-color: #fff;
-	        }
-	
-	        .map-card-header {
-	            padding: 15px;
-	            text-align: center;
-	            background-color: #f8f9fa;
-	            font-size: 20px;
-	            font-weight: bold;
-	            border-bottom: 1px solid #eee;
-	        }
-	
-	        #map {
-	            width: 100%;
-	            height: 400px;
-	        }
-	    </style>
-	</head>
-	<body>
+		<style>
+		    .map-card {
+		        width: 100%;               
+		        max-width: none;           
+		        margin: 0;              
+		        padding: 20px;              
+		        box-sizing: border-box;      
+		        border-top: 1px solid #eee;  
+		        background-color: #fff;
+		    }
+		
+		    .map-card-header {
+		        padding: 15px;
+		        text-align: center;
+		        font-size: 20px;
+		        font-weight: bold;
+		        background-color: #f8f9fa;
+		        border-bottom: 1px solid #eee;
+		    }
+		
+		    #map {
+		        width: 100%;
+		        height: 400px;
+		    }
+		</style>
 	
 	<%
 	    String name = request.getParameter("name");
 	    String latStr = request.getParameter("lat");
 	    String lngStr = request.getParameter("lng");
 	
-	    if (name == null || name.isEmpty()) name = "CatchFood 본점";
+	    if (name == null || name.isEmpty()) name = "CaTchFood 본점";
 	    if (latStr == null || latStr.isEmpty()) latStr = "35.148705";
 	    if (lngStr == null || lngStr.isEmpty()) lngStr = "129.058910";
 	
@@ -74,13 +68,10 @@
 	
 	    const infowindow = new kakao.maps.InfoWindow({
 	        content:
-	            '<div style="padding:10px; text-align:center;">' +
+	            '<div style="padding:10px; text-align:center; width:150px;">' +
 	            '🍽 ' + name + '<br/>' +
 	            '[범천1동 869-28]' +
 	            '</div>'
 	    });
 	    infowindow.open(map, marker);
 	</script>
-
-</body>
-</html>
