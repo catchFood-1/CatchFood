@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.catchfood.dao.BasketDao;
 import com.catchfood.dao.MenuDao;
 import com.catchfood.dao.ReservationDao;
 import com.catchfood.dao.UserDao;
+import com.catchfood.dto.BasketViewDto;
 import com.catchfood.dto.ReservationDto;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -152,10 +154,21 @@ public class ReservationController {
 	}
 	
 	
+	
+	//예약 상세보기
+	@RequestMapping("reservationDetail")
+	public String detail(@RequestParam("reservationNum") int reservationNum, Model model) {
+		List<BasketViewDto> detailList = reservationDao.reservationDetail(reservationNum);
+		model.addAttribute("detailList", detailList);
+		return "Reservation/reservationDetail";
+	}
+	
 	//예약 삭제
 	@RequestMapping("reservationDelete")
 	public String delete(ReservationDto reservationDto) {
 		reservationDao.reservationDelete(reservationDto.getReservationNum());
 		return "redirect:reservationList";
 	}
+	
+	
 }
