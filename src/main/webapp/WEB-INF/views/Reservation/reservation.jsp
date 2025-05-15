@@ -19,7 +19,7 @@
 	</style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 
 	<h1>CatchFood 예약</h1>
 	<h3><i><u>예약 확정 후에는 변경이 불가합니다.</u></i></h3>
@@ -197,7 +197,7 @@
 		<input type="submit" value="다음">
 	</form>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>	
+	<jsp:include page="../footer.jsp"/>	
 	
 	<script>
 		let selectedDate = null;

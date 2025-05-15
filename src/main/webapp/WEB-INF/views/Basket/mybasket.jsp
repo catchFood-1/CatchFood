@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="/css/basket.css">
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
+	
 	<h2>${userId}님 예약 현황</h2>
 	
 	<c:set var="prevReservation" value="-1" />
@@ -50,7 +51,7 @@
 	    <jsp:param name="lng" value="${r.lng}" />
 	</jsp:include>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 
 </html>

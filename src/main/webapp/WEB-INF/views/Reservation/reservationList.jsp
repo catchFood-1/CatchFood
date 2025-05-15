@@ -8,7 +8,7 @@
 <title>관리자용 전체 리스트</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 	
 	<h1>예약 리스트(관리자용)</h1>
 	<table border="1">
@@ -36,6 +36,6 @@
 	</c:forEach>
 	</table>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <title>공지사항 상세</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/top.jsp"/>
+<jsp:include page="../top.jsp"/>
 <h2>공지사항</h2>
 
 <table border="1" width="800" cellpadding="10" align="center">
@@ -48,6 +48,6 @@
 	    </a>
    		 <a href="/noticelist"><button>목록으로</button></a>
 	</div>
- <jsp:include page="/WEB-INF/views/footer.jsp"/>
+ <jsp:include page="../footer.jsp"/>
 </body>
 </html>

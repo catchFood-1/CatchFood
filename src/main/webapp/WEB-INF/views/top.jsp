@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-	<!-- 상단 네비게이션 -->
   	<div class="navbar">
 	    <div class="navbar-left">
 	      <a href="/">
@@ -25,8 +24,8 @@
 	    </div>
   	</div>
 
-  	<!-- 사이드바 -->
   	<div class="sidebar" id="sidebar">
+  		<a href="noticelist">공지사항</a>
 	    <a href="reservation">예약하기</a>
 	    <a href="review">리뷰리스트</a>
 	    <a href="menulist">메뉴 리스트</a>
@@ -36,10 +35,8 @@
 	  </div>
 	  
 	  
-	  <!-- 오버레이 -->
 	  <div class="overlay" id="overlay"></div>
 	  
-	   <!-- 사이드바 제어 스크립트 -->
 	  <script>
 	    function toggleSidebar() {
 	      const sidebar = document.getElementById('sidebar');
@@ -56,7 +53,6 @@
 	      }
 	    }
 	
-	    // 오버레이 클릭 시 닫기
 	    document.getElementById('overlay').addEventListener('click', function () {
 	      document.getElementById('sidebar').classList.remove('active');
 	      document.getElementById('overlay').classList.remove('active');

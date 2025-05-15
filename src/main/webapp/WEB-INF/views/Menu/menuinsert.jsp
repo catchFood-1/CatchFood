@@ -7,7 +7,7 @@
 <title>메뉴등록</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 	
 	<form name="menu" action="menuwrite" method="post" enctype="multipart/form-data">
 	<h2>메뉴 등록 페이지</h2>
@@ -44,6 +44,6 @@
 		<input type="submit" value="메뉴 등록">
 	</form>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

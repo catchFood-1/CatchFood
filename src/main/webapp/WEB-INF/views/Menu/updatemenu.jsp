@@ -8,7 +8,7 @@
 </head>
 <body>
     <h3>메뉴 수정</h3>
-    <jsp:include page="/WEB-INF/views/top.jsp"/>
+    <jsp:include page="../top.jsp"/>
     
     <form name="detail" id="detail" method="post" action="menuupdate" enctype="multipart/form-data">
         <input type="hidden" name="menuNum" value="${menuDetail.menuNum}">
@@ -50,6 +50,6 @@
         <input type="submit" value="메뉴수정">
         <input type="button" value="수정취소" onClick="history.back()">
     </form>
-    <jsp:include page="/WEB-INF/views/footer.jsp"/>
+    <jsp:include page="../footer.jsp"/>
 </body>
 </html>

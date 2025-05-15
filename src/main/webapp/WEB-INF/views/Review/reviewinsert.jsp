@@ -8,7 +8,7 @@
 <title>리뷰작성페이지</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 
 	<h2>리뷰작성페이지</h2>
 	<form name="review" method="post" action="writer" enctype="multipart/form-data">
@@ -44,6 +44,6 @@
 		</table>
 	</form>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <title>예약 확인 페이지</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 	
 	<% ReservationDto dto = (ReservationDto)session.getAttribute("tempReservation"); %>
 
@@ -100,6 +100,6 @@
 		<input type="submit" value="결제">
 	</form>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

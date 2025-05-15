@@ -7,7 +7,7 @@
     <title>공지사항 목록</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/top.jsp"/>
+<jsp:include page="../top.jsp"/>
 
 <h2>공지사항</h2>
 
@@ -67,6 +67,6 @@
 	    </c:forEach>
 	</div>
 
-<jsp:include page="/WEB-INF/views/footer.jsp"/>
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>

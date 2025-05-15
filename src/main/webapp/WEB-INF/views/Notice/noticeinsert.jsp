@@ -7,7 +7,7 @@
     <title>공지사항 작성</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/top.jsp"/>
+<jsp:include page="../top.jsp"/>
 <h2>공지사항 작성</h2>
 
 <form method="post" action="noticewrite">
@@ -47,6 +47,6 @@
         <input type="submit" value="작성 완료">
     </div>
 </form>
-<jsp:include page="/WEB-INF/views/footer.jsp"/>
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <title>리뷰 리스트</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 
 	<h2>리뷰작성</h2>
 	<table border="1" width="500">
@@ -79,6 +79,6 @@
 	    <input type="submit" value="리뷰작성하기">
 	</form>
 	
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

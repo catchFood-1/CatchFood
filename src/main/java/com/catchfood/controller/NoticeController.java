@@ -66,6 +66,7 @@ public class NoticeController {
 	@RequestMapping("noticedetail")
 	public String noticeDetail(@RequestParam("noticeNum") int noticeNum, Model model) {
 
+		
 	    noticedao.noticeViewCount(noticeNum);
 
 	    NoticeDto notice = noticedao.noticeDetail(noticeNum);

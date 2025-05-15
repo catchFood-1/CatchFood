@@ -19,7 +19,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 	
 	<div>
 	    <button onclick="showCategory('korean')">한식</button>
@@ -121,6 +121,6 @@
 	    </c:forEach>
 	</div>
 		<a href="/menuinsert">메뉴 등록</a>
-	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

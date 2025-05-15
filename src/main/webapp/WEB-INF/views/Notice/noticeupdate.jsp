@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/top.jsp"/>
+<jsp:include page="../top.jsp"/>
 <form method="post" action="/noticeupdate">
     <input type="hidden" name="noticeNum" value="${notice.noticeNum}">
     <table border="1" width="800" cellpadding="10" align="center">
@@ -47,6 +47,6 @@
         <button type="submit">수정 완료</button>
     </div>
 </form>
- <jsp:include page="/WEB-INF/views/footer.jsp"/>
+ <jsp:include page="../footer.jsp"/>
 </body>
 </html>

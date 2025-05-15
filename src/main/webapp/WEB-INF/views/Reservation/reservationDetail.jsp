@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp"/>
+	<jsp:include page="../top.jsp"/>
 	
 	<c:if test="${not empty detailList}">
   	<c:set var="first" value="${detailList[0]}" />
@@ -56,5 +56,7 @@
 	    </c:forEach>
 	  </table>
 	</c:if>
+	
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>
