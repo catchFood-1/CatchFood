@@ -12,7 +12,7 @@
   	<div class="navbar">
 	    <div class="navbar-left">
 	      <a href="/">
-	      	<img src="/images/logo.png" alt="CaTchFood 로고">
+	      	<img src="/images/logo1.png" alt="CaTchFood 로고">
 	      </a>
 	    </div>
 	
@@ -41,7 +41,8 @@
 	    <a href="menuinsert">메뉴 작성</a>
 	    <a href="mybasket">예약 현황</a>
 	    <a href="reservationList">예약 리스트(관리자용)</a>
-	    <a href="mypage">마이페이지</a>
+	    <a href="informationUpdate">회원 정보 수정</a>
+	    <a href="userList">회원 리스트(관리자용)</a>
 	  </div>
 	  
 	  

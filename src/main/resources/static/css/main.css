@@ -8,7 +8,8 @@
     .navbar {
       background-color: #ff5a5f;
       color: white;
-      padding: 8px 16px;
+      height: 60px; /* 고정 높이 */
+      padding: 0px 16px;
       font-size: 20px;
       font-weight: bold;
       display: flex;
@@ -21,9 +22,10 @@
       align-items: center;
     }
     .navbar-left img {
-      height: 40px;
-      margin-right: 8px;
-    }
+	  height: 50px;
+	  vertical-align:middle;
+	}
+	
     .right-section {
       display: flex;
       align-items: center;

@@ -79,6 +79,51 @@ public class UserController {
 			return "User/jusoPopup";
 	    }
 
-	    
+	    //회원 정보 수정 폼으로 이동
+	    @RequestMapping("informationUpdate")
+	    public String informationUpdateForm(HttpSession session,
+	    									Model model) {
+	    	UserDto loginUser = (UserDto) session.getAttribute("loginUser");
+	    	if (loginUser == null) {
+	            return "redirect:/login"; // 비로그인 상태면 로그인 페이지로
+	        }
 
+	        int userNum = loginUser.getUserNum();
+	        UserDto updateUser = userDao.userInformationUpdate(userNum);
+
+	        model.addAttribute("user", updateUser); // JSP에 넘길 사용자 정보
+	        return "User/informationUpdate"; // 정보 수정 JSP
+	    }
+	    
+	    //비밀번호 변경 폼으로 이동
+	    @RequestMapping("passwordChange")
+	    public String passwordChangeForm() {
+	    	return "User/passwordChange"; //비밀번호 수정 jsp
+	    }
+	    
+	    
+	    //비밀번호 변경 후 -> main으로 
+	    @RequestMapping("informationChange")
+	    public String informationChangeForm(@RequestParam("newPassword") String newPassword,
+	                                        @RequestParam("newPasswordCheck") String newPasswordCheck,
+	                                        HttpSession session,
+	                                        Model model) {
+
+	        if (!newPassword.equals(newPasswordCheck)) {
+	            model.addAttribute("error", "비밀번호가 일치하지 않습니다.");
+	            return "User/passwordChange";
+	        }
+
+	        UserDto loginUser = (UserDto) session.getAttribute("loginUser");
+	        userDao.userPasswordChange(loginUser.getUserNum(), newPassword);
+
+	        return "redirect:/";
+	    }
+
+	   //회원 리스트
+	   @RequestMapping("userList")
+	   public String userlist(Model model) {
+		   model.addAttribute("lists", userDao.userList());
+		   return "User/userList";
+	   }
 }
