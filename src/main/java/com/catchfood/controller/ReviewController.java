@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.catchfood.dao.ReviewDao;
 import com.catchfood.dto.ReviewDto;
+import com.catchfood.dto.UserDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -26,7 +27,11 @@ public class ReviewController {
     private ReviewDao reviewdao;
 
     @RequestMapping("insert")
-    public String insert() {
+    public String insert(HttpSession session) {
+    	UserDto loginUser = (UserDto) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/login";
+        }
         return "Review/reviewinsert";
     }
 
@@ -36,7 +41,7 @@ public class ReviewController {
                                HttpSession session,
                                HttpServletRequest request,
                                Model model) {
-
+        
         String webPath = "/images/";
         String realPath = request.getServletContext().getRealPath(webPath);
         StringBuilder imagePaths = new StringBuilder();
@@ -62,7 +67,7 @@ public class ReviewController {
         }
 
         if (!imagePaths.isEmpty()) {
-            imagePaths.setLength(imagePaths.length() - 1); // 마지막 , 제거
+            imagePaths.setLength(imagePaths.length() - 1); 
             dto.setReviewImage(imagePaths.toString());
         }
 

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 	<h2>리뷰작성페이지</h2>
 	<form name="review" method="post" action="writer" enctype="multipart/form-data">
 		<table border="1" width="500">
-		<input type="hidden" name="userNum" value="1">
+		<input type="hidden" name="userNum" value="${sessionScope.loginUser.userNum}">
 			<tr>
 				<td>
 					<select name="reviewStars">
