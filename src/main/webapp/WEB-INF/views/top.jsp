@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,16 @@
 	
 	    <div class="right-section">
 	      <div class="auth-links">
-	        <a href="login">로그인</a>
-	        <a href="signup">회원 가입</a>
+	      	<c:choose>
+		        <c:when test="${not empty sessionScope.loginUser}">
+		            <span>${loginUser.userName}님 환영합니다.</span> |
+		            <a href="/logout">로그아웃</a>
+		        </c:when>
+		        <c:otherwise>
+		            <a href="/login">로그인</a> |
+		            <a href="/register">회원가입</a>
+		        </c:otherwise>
+		    </c:choose>
 	      </div>
 	      <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
 	    </div>
@@ -32,6 +41,7 @@
 	    <a href="menuinsert">메뉴 작성</a>
 	    <a href="mybasket">예약 현황</a>
 	    <a href="reservationList">예약 리스트(관리자용)</a>
+	    <a href="mypage">마이페이지</a>
 	  </div>
 	  
 	  

@@ -13,8 +13,9 @@
 
 	<%
     	ReservationDto dto = (ReservationDto) session.getAttribute("tempReservation");
-	
-		String userId = "testuser123";
+		com.catchfood.dto.UserDto loginUser = (com.catchfood.dto.UserDto) session.getAttribute("loginUser");
+	  
+		String userId = loginUser.getUserId();
 	  	String reservationDate = request.getParameter("reservationDate");
 	  	int reservationNumber = Integer.parseInt(request.getParameter("reservationNumber"));
 	  	

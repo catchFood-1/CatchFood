@@ -12,9 +12,12 @@
 <body>
 	<jsp:include page="../top.jsp"/>
 	
-	<% ReservationDto dto = (ReservationDto)session.getAttribute("tempReservation"); %>
+	<% 
+		ReservationDto dto = (ReservationDto)session.getAttribute("tempReservation"); 
+		com.catchfood.dto.UserDto loginUser = (com.catchfood.dto.UserDto)session.getAttribute("loginUser");
+	%>
 
-	<h2>예약 임시 확인 단계입니다.</h2>
+	<h2><%= loginUser.getUserName() %>님의 예약 임시 확인 단계입니다.</h2>
 	<table border="1">
 		<tr>
 			<th>예약 날짜</th>
@@ -87,7 +90,7 @@
 	<h3>날짜, 시간, 인원수, 주문내역이 같다면 결제눌러주시면 됩니다.</h3>
 	
 	<form name="paymentForm" method="post" action="/payment">
-		<input type="hidden" name="userId" value="testuser123">
+		<input type="hidden" name="userId" value="<%= loginUser.getUserId() %>">
 		<input type="hidden" name="reservationDate" value="<%= dto.getReservationDate() %>">
   		<input type="hidden" name="reservationNumber" value="<%= dto.getReservationNumber() %>">
   		<input type="hidden" name="reservationRequest" value="<%= dto.getReservationRequest() %>">
