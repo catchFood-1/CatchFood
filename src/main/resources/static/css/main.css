@@ -172,3 +172,6 @@
 	  padding: 3px 10px;
 	  border-radius: 20px;
 	}
+	.banner-pagination:empty {
+     display: none;
+   }

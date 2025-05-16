@@ -25,7 +25,7 @@
 		  <div class="banner-slide">
 		    	<img src="/images/banner2.png" alt="배너2">
 		  </div>
-		  <div class="banner-pagination" id="banner-pagination">1 / 2</div>
+		  <div class="banner-pagination" id="banner-pagination"></div>
 		</div>
 	    <%@ include file="Menu/recommendmenu.jsp" %>
 	  </div>
@@ -35,14 +35,14 @@
 	  document.addEventListener("DOMContentLoaded", function () {
 	    let currentSlide = 0;
 	    const slides = document.querySelectorAll('.banner-slide');
-	    const pagination = document.getElementById('banner-pagination');
+	    //const pagination = document.getElementById('banner-pagination');
 	
 	    function showSlide(index) {
 	      slides.forEach((slide, i) => {
 	        slide.classList.remove('active');
 	        if (i === index) slide.classList.add('active');
 	      });
-	      pagination.textContent = `${index + 1} / ${slides.length}`;
+	      //pagination.textContent = `${index + 1} / ${slides.length}`;
 	    }
 	
 	    function nextSlide() {
